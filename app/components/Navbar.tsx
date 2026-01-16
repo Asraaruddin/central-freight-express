@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Truck, Shield, Mail, Menu, X, ChevronRight } from 'lucide-react';
+import { Truck, Shield, Mail, Menu, X, ChevronRight,MapPin,FileText } from 'lucide-react';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -37,26 +37,46 @@ export default function Navbar() {
             
             {/* LOGO (UNCHANGED) */}
             <Link href="/" className="flex items-center space-x-3 group">
-              <div className="relative">
-                <div className="absolute -inset-2 bg-gradient-to-r from-blue-600 to-blue-800 rounded-lg blur opacity-0 group-hover:opacity-30 transition-all duration-300" />
-                <div className="relative w-10 h-10 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 rounded-lg flex items-center justify-center shadow">
-                  <Truck className="w-5 h-5 text-white" strokeWidth={2.5} />
-                </div>
-              </div>
-              <span className="text-white font-extrabold text-xl tracking-tight">
-                Prime<span className="text-blue-500">FX</span>
-              </span>
-            </Link>
+  {/* Icon */}
+  <div className="relative">
+    <div className="absolute -inset-2 bg-gradient-to-r from-blue-600 to-blue-800 rounded-lg blur opacity-0 group-hover:opacity-30 transition-all duration-300" />
+    <div className="relative w-11 h-11 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 rounded-lg flex items-center justify-center shadow-lg">
+      <Truck className="w-5 h-5 text-white" strokeWidth={2.5} />
+    </div>
+  </div>
+
+  {/* Brand Text */}
+  <div className="leading-tight">
+    <span className="block text-white font-extrabold text-lg tracking-wide">
+      Central
+    </span>
+    <span className="block text-blue-400 font-semibold text-sm tracking-wider uppercase">
+      Freight Express
+    </span>
+  </div>
+</Link>
+
 
             {/* DESKTOP NAV */}
             <div className="hidden md:flex items-center space-x-6">
               <NavLink href="/" label="Home" active={pathname === '/'} />
+            
+            <NavLink 
+                href="/track-shipment" 
+                label="Track Shipment" 
+                active={pathname === '/track-shipment'}
+                icon={<MapPin className="w-4 h-4" />}
+              />
+
+
               <NavLink
                 href="/become-a-partner"
                 label="Be a Partner"
                 icon={<Shield className="w-4 h-4" />}
                 active={pathname === '/become-a-partner'}
               />
+              
+
               <NavLink
                 href="/contact-us"
                 label="Contact"
@@ -139,3 +159,5 @@ function MobileLink({ href, label, icon }: any) {
     </Link>
   );
 }
+
+

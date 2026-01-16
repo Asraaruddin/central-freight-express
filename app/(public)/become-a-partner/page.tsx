@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Navbar from '@/app/components/Navbar';
 import { 
   Truck, Shield, Mail, Users, Building2, Globe, Target, BarChart, 
   CheckCircle, ArrowRight, Handshake, TrendingUp, Headphones, 
@@ -219,7 +218,6 @@ export default function BecomeAPartner() {
 
   return (
     <>
-      <Navbar />
       <main className="min-h-screen">
         {/* Hero Section */}
         <section ref={heroRef} className="relative min-h-screen pt-24 md:pt-32">

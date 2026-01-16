@@ -88,13 +88,21 @@ export default function Footer() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <div className="flex justify-center mb-6">
+                {/* Central Freight Express Logo - matching navbar style */}
                 <div className="flex items-center space-x-2">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 rounded-lg flex items-center justify-center shadow-lg">
-                    <Truck className="w-6 h-6 text-white" strokeWidth={2.5} />
+                  <div className="relative">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 rounded-lg flex items-center justify-center shadow-lg">
+                      <Truck className="w-6 h-6 text-white" strokeWidth={2.5} />
+                    </div>
                   </div>
-                  <span className="text-white font-extrabold text-xl tracking-tight">
-                    Prime<span className="text-blue-500">FreightExpress</span>
-                  </span>
+                  <div className="leading-tight">
+                    <span className="block text-white font-extrabold text-xl tracking-wide">
+                      Central
+                    </span>
+                    <span className="block text-blue-400 font-semibold text-sm tracking-wider uppercase">
+                      Freight Express
+                    </span>
+                  </div>
                 </div>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -178,7 +186,7 @@ export default function Footer() {
                         required
                         disabled={loading}
                         className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white disabled:opacity-50"
-                        placeholder="+1  682-254-6683"
+                        placeholder="+1 682-254-6683"
                       />
                     </div>
                     <div>
@@ -235,7 +243,7 @@ export default function Footer() {
                       <div>
                         <div className="font-bold">Address</div>
                         <div className="text-gray-300 mt-1">
-                         6179 Wauconda way west Lake Worth, FL, 33463
+                          6179 Wauconda Way West, Lake Worth, FL 33463
                         </div>
                       </div>
                     </div>
@@ -247,10 +255,10 @@ export default function Footer() {
                       <div>
                         <div className="font-bold">Email</div>
                         <a 
-                          href="mailto:support@primefreightexpress.com" 
+                          href="mailto:support@centralfreightexpress.com" 
                           className="text-blue-400 hover:text-blue-300 transition-colors mt-1 block"
                         >
-                          support@primefreightexpress.com
+                          support@centralfreightexpress.com
                         </a>
                       </div>
                     </div>
@@ -262,10 +270,10 @@ export default function Footer() {
                       <div>
                         <div className="font-bold">Phone</div>
                         <a 
-                          href="tel:+13165551234" 
+                          href="tel:+16822546683" 
                           className="text-blue-400 hover:text-blue-300 transition-colors mt-1 block"
                         >
-                         +1  682-254-6683
+                          +1 682-254-6683
                         </a>
                       </div>
                     </div>
@@ -294,24 +302,60 @@ export default function Footer() {
       {/* Footer Bottom */}
       <div className="py-8 border-t border-gray-800">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-6 md:mb-0">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center">
+            {/* Logo Section */}
+            <div className="mb-6 lg:mb-0">
               <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-800 rounded flex items-center justify-center">
-                  <Truck className="w-4 h-4 text-white" />
+                <div className="relative">
+                  <div className="w-8 h-8 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 rounded flex items-center justify-center">
+                    <Truck className="w-4 h-4 text-white" />
+                  </div>
                 </div>
-                <span className="text-white font-extrabold text-xl tracking-tight">
-                  Prime<span className="text-blue-500">FreightExpress</span>
-                </span>
+                <div className="leading-tight">
+                  <span className="block text-white font-extrabold text-lg tracking-wide">
+                    Central
+                  </span>
+                  <span className="block text-blue-400 font-semibold text-sm tracking-wider uppercase">
+                    Freight Express
+                  </span>
+                </div>
               </div>
               <p className="text-gray-400 text-sm mt-2">
-                Premium LTL Shipping Solutions
+                Premium Freight Shipping Solutions
               </p>
             </div>
 
-            <div className="text-center md:text-right">
+            {/* Legal Links Section */}
+            <div className="mb-6 lg:mb-0">
+              <div className="flex flex-wrap gap-4 lg:gap-6">
+                <Link 
+                  href="/PrivacyNotice" 
+                  className="text-gray-400 hover:text-blue-400 transition-colors text-sm"
+                >
+                  Privacy Notice
+                </Link>
+                <Link 
+                  href="/TermsOfUse" 
+                  className="text-gray-400 hover:text-blue-400 transition-colors text-sm"
+                >
+                  Terms of Use
+                </Link>
+                <Link 
+                  href="/legal-terms" 
+                  className="text-gray-400 hover:text-blue-400 transition-colors text-sm"
+                >
+                  Legal Terms
+                </Link>
+              </div>
+            </div>
+
+            {/* Copyright Section */}
+            <div className="text-center lg:text-right">
               <p className="text-gray-400 text-sm">
-                &copy; {currentYear} PrimeFreightExpress. All rights reserved.
+                &copy; {currentYear} Central Freight Express. All rights reserved.
+              </p>
+              <p className="text-gray-500 text-xs mt-1">
+                Domestic road freight transportation across the United States
               </p>
             </div>
           </div>

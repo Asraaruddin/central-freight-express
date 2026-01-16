@@ -2,8 +2,6 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import Navbar from '@/app/components/Navbar';
-import Footer from '@/app/components/Footer';
 import { 
   Phone, Mail, MapPin, Clock, Headphones, Users, MessageSquare, 
   Globe, Shield, Zap, CheckCircle, ArrowRight, Building2, 
@@ -162,7 +160,7 @@ export default function Contact() {
   const contactMethods = [
     {
       icon: Headphones,
-      title: "24/7 Support Hotline",
+      title: " Support Hotline",
       description: "Immediate assistance for urgent shipments and emergencies",
       contact: "+1 682-254-6683",
       response: "Instant",
@@ -221,18 +219,14 @@ export default function Contact() {
       name: "Technical Support",
       description: "Platform assistance, API integration, and technical issues",
       icon: Cpu,
-      features: ["24/7 Tech Support", "API Documentation", "System Integration"]
+      features: [" Tech Support", "API Documentation", "System Integration"]
     }
   ];
 
   const faqItems = [
     {
       question: "What's the fastest way to get support?",
-      answer: "For urgent matters, call our 24/7 support hotline at +1 +1  682-254-6683. For non-urgent inquiries, email us at support@primefreightexpress.com with a guaranteed response within 4 hours."
-    },
-    {
-      question: "Do you offer support in languages other than English?",
-      answer: "Yes! We provide support in 12+ languages including Spanish, French, German, Mandarin, Japanese, and Arabic. Our multilingual team is available 24/7 to assist you."
+      answer: "For urgent matters, call our  support hotline at +1 682-254-6683. For non-urgent inquiries, email us at support@CentralFreightExpress.com with a guaranteed response within 4 hours."
     },
     {
       question: "What information should I include when contacting support?",
@@ -244,19 +238,17 @@ export default function Contact() {
     },
     {
       question: "What are your business hours for different departments?",
-      answer: "Our 24/7 hotline operates round the clock. Sales department: Mon-Fri 8AM-8PM EST. Customer support: 24/7 via phone, 6AM-10PM via email. Technical support: 24/7."
+      answer: "Our 24/7 hotline operates round the clock. Sales department: Mon-Fri 8AM-8PM EST. Customer support:  via phone, 6AM-10PM via email. Technical support: ."
     },
     {
       question: "How quickly can you respond to international shipping inquiries?",
-      answer: "International department responds within 6 hours during business days. For urgent international shipping needs, use our 24/7 hotline for immediate assistance."
+      answer: "International department responds within 6 hours during business days. For urgent international shipping needs, use our  hotline for immediate assistance."
     }
   ];
-
   return (
     <>
-      <Navbar />
       <main className="min-h-screen">
-        {/* Hero Section - Fixed visibility issue */}
+        {/* Hero Section */}
         <section ref={heroRef} className="relative min-h-screen pt-24 md:pt-32">
           <div className="absolute inset-0">
             <div 
@@ -268,12 +260,11 @@ export default function Contact() {
                 backgroundPosition: 'center',
               }}
             />
-            {/* Overlay for better text visibility */}
             <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20" />
           </div>
           
           <div className="relative h-full flex items-center">
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <div className="max-w-2xl">
                 <div className="mb-8">
                   <span className="inline-block px-4 py-2 bg-blue-600/90 backdrop-blur-sm rounded-full text-white font-bold text-sm mb-4">
@@ -281,24 +272,24 @@ export default function Contact() {
                   </span>
                 </div>
                 
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
                   Get in <span className="text-blue-300">Touch</span>
                 </h1>
                 
-                <p className="text-xl text-white/90 mb-10 leading-relaxed font-medium drop-shadow-2xl max-w-xl">
+                <p className="text-lg sm:text-xl text-white/90 mb-10 leading-relaxed font-medium drop-shadow-2xl max-w-xl">
                   Want to get in touch? We'd love to hear from you. Here's how you can reach us.
                 </p>
 
-                <div className="flex flex-wrap gap-4">
+                <div className="flex flex-wrap gap-3 sm:gap-4">
                   <Link
                     href="#contact-form"
-                    className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
+                    className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 sm:px-8 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
                   >
                     Send Message
                   </Link>
                   <Link
                     href="tel:+13165551234"
-                    className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 border border-white/30 flex items-center gap-2"
+                    className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-bold py-3 px-6 sm:px-8 rounded-lg transition-all duration-300 border border-white/30 flex items-center gap-2 text-sm sm:text-base"
                   >
                     <Phone className="w-4 h-4" />
                     Call Now
@@ -309,118 +300,30 @@ export default function Contact() {
           </div>
         </section>
 
-        {/* Contact Methods Section */}
-        <section className="py-24 bg-gradient-to-b from-white to-gray-50">
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                  How to <span className="text-blue-600">Reach Us</span>
-                </h2>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  Multiple channels for seamless communication. Choose the method that works best for your needs.
-                </p>
-              </div>
-
-              
-              {/* Talk to Sales & Support Section */}
-              <div className="grid lg:grid-cols-2 gap-12 mb-20">
-                <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-3xl p-8 text-white">
-                  <div className="flex items-center mb-6">
-                    <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mr-6">
-                      <Users className="w-8 h-8" />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold">Talk to Sales</h3>
-                      <p className="text-blue-200">Expert guidance for your business</p>
-                    </div>
-                  </div>
-                  <p className="text-blue-100 mb-8 leading-relaxed">
-                    Interested in PrimeFreightExpress's comprehensive logistics solutions? Just pick up the phone to chat with a member of our sales team. Whether you're looking for LTL services, freight forwarding, or customized logistics solutions, we're here to help.
-                  </p>
-                  <div className="space-y-4">
-                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                      <div className="flex items-center justify-between mb-3">
-                        <div className="text-lg font-bold">North America</div>
-                        <div className="text-blue-200 text-sm">Toll Free</div>
-                      </div>
-                      <div className="text-2xl font-bold mb-2">000-800-050-3669</div>
-                      <div className="text-blue-200 text-sm">Available 24/7</div>
-                    </div>
-                    <div className="text-center">
-                      <Link 
-                        href="/global-numbers" 
-                        className="text-white hover:text-blue-200 font-bold flex items-center justify-center gap-2"
-                      >
-                        View all global numbers
-                        <ArrowRight className="w-4 h-4" />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-8 text-white">
-                  <div className="flex items-center mb-6">
-                    <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mr-6">
-                      <HelpCircle className="w-8 h-8" />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold">Contact Customer Support</h3>
-                      <p className="text-gray-300">We're here when you need us</p>
-                    </div>
-                  </div>
-                  <p className="text-gray-300 mb-8 leading-relaxed">
-                    Sometimes you need a little help from your friends. Or a PrimeFreightExpress support representative. Don't worry... we're here for you. Our customer support team is trained to handle everything from tracking issues to complex logistics challenges.
-                  </p>
-                  <div className="space-y-6">
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <CheckCircle className="w-5 h-5 text-green-400" />
-                      </div>
-                      <div>
-                        <h4 className="font-bold mb-1">Expert Support Team</h4>
-                        <p className="text-gray-300 text-sm">Certified logistics professionals with 10+ years experience</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <CheckCircle className="w-5 h-5 text-green-400" />
-                      </div>
-                      <div>
-                        <h4 className="font-bold mb-1">Multiple Languages</h4>
-                        <p className="text-gray-300 text-sm">Support available in English, Spanish, French, and Mandarin</p>
-                      </div>
-                    </div>
-                  </div>
-                  <Link
-                    href="#contact-form"
-                    className="w-full bg-white text-gray-900 font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition-colors mt-8 flex items-center justify-center"
-                  >
-                    Contact Support
-                  </Link>
-                </div>
-              </div>
-
-              {/* Departments Section */}
-              <div className="mb-20">
-                <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">
+        {/* Contact Methods & Departments Combined Section */}
+        <section className="py-12 md:py-16 lg:py-20 bg-gradient-to-b from-white to-gray-50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto">
+              {/* Connect with the Right Department Section - Minimized Gap */}
+              <div className="mb-8 sm:mb-10 lg:mb-12">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-gray-900 mb-6 sm:mb-8">
                   Connect with the Right <span className="text-blue-600">Department</span>
-                </h3>
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6">
                   {departments.map((dept, index) => (
-                    <div key={index} className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all border border-gray-100">
-                      <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
-                        <dept.icon className="w-6 h-6 text-blue-600" />
+                    <div key={index} className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200 hover:-translate-y-1">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-50 rounded-lg sm:rounded-xl flex items-center justify-center mb-3 sm:mb-4">
+                        <dept.icon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
                       </div>
-                      <h4 className="text-lg font-bold text-gray-900 mb-3">{dept.name}</h4>
-                      <p className="text-gray-600 text-sm mb-4">{dept.description}</p>
-                      <div className="space-y-2">
+                      <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3 leading-tight">{dept.name}</h4>
+                      <p className="text-xs sm:text-sm text-gray-600 mb-3 sm:mb-4 leading-relaxed">{dept.description}</p>
+                      <div className="space-y-1.5 sm:space-y-2">
                         {dept.features.map((feature, idx) => (
-                          <div key={idx} className="flex items-center text-gray-700 text-sm">
-                            <div className="w-4 h-4 bg-green-100 rounded-full flex items-center justify-center mr-2">
-                              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                          <div key={idx} className="flex items-center text-gray-700 text-xs sm:text-sm">
+                            <div className="w-3 h-3 sm:w-4 sm:h-4 bg-green-50 rounded-full flex items-center justify-center mr-1.5 sm:mr-2 flex-shrink-0">
+                              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-500 rounded-full"></div>
                             </div>
-                            {feature}
+                            <span className="truncate">{feature}</span>
                           </div>
                         ))}
                       </div>
@@ -428,56 +331,50 @@ export default function Contact() {
                   ))}
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
 
-        <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">  
-              {/* Why Contact Us Section */}
-              <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-3xl p-8 md:p-12 text-white">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Why Contact CentralFreightExpress Section - Directly Below with Minimal Gap */}
+              <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl sm:rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 text-white">
+                <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center">
                   <div>
-                    <h3 className="text-3xl font-bold mb-6">
-                      Why Contact <span className="text-blue-200">PrimeFreightExpress?</span>
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 leading-tight">
+                      Why Contact <span className="text-blue-200">CentralFreightExpress?</span>
                     </h3>
-                    <p className="text-blue-100 mb-8 leading-relaxed">
+                    <p className="text-sm sm:text-base md:text-lg text-blue-100 mb-6 sm:mb-8 leading-relaxed">
                       We're not just another logistics company. We're your strategic partner in supply chain optimization. When you contact us, you're connecting with industry experts who understand the complexities of modern logistics.
                     </p>
                     
-                    <div className="space-y-6">
-                      <div className="flex items-start space-x-4">
-                        <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <ShieldCheck className="w-5 h-5" />
+                    <div className="space-y-4 sm:space-y-5 md:space-y-6">
+                      <div className="flex items-start space-x-3 sm:space-x-4">
+                        <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5" />
                         </div>
                         <div>
-                          <h4 className="font-bold text-lg mb-2">Industry Expertise</h4>
-                          <p className="text-blue-200 text-sm">
+                          <h4 className="font-bold text-base sm:text-lg md:text-xl mb-1 sm:mb-2">Industry Expertise</h4>
+                          <p className="text-blue-200 text-xs sm:text-sm md:text-base">
                             20+ years of logistics experience across multiple industries
                           </p>
                         </div>
                       </div>
                       
-                      <div className="flex items-start space-x-4">
-                        <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <Zap className="w-5 h-5" />
+                      <div className="flex items-start space-x-3 sm:space-x-4">
+                        <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <Zap className="w-4 h-4 sm:w-5 sm:h-5" />
                         </div>
                         <div>
-                          <h4 className="font-bold text-lg mb-2">Rapid Response</h4>
-                          <p className="text-blue-200 text-sm">
+                          <h4 className="font-bold text-base sm:text-lg md:text-xl mb-1 sm:mb-2">Rapid Response</h4>
+                          <p className="text-blue-200 text-xs sm:text-sm md:text-base">
                             Average response time under 2 hours for critical inquiries
                           </p>
                         </div>
                       </div>
                       
-                      <div className="flex items-start space-x-4">
-                        <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <Users2 className="w-5 h-5" />
+                      <div className="flex items-start space-x-3 sm:space-x-4">
+                        <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <Users2 className="w-4 h-4 sm:w-5 sm:h-5" />
                         </div>
                         <div>
-                          <h4 className="font-bold text-lg mb-2">Dedicated Teams</h4>
-                          <p className="text-blue-200 text-sm">
+                          <h4 className="font-bold text-base sm:text-lg md:text-xl mb-1 sm:mb-2">Dedicated Teams</h4>
+                          <p className="text-blue-200 text-xs sm:text-sm md:text-base">
                             Specialized departments for different business needs
                           </p>
                         </div>
@@ -485,24 +382,28 @@ export default function Contact() {
                     </div>
                   </div>
                   
-                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-                    <h4 className="text-2xl font-bold mb-6">Contact Success Metrics</h4>
-                    <div className="space-y-4">
-                      <div className="flex items-center justify-between py-3 border-b border-white/10">
-                        <span className="text-blue-100">Customer Satisfaction</span>
-                        <span className="font-bold text-green-300">98%</span>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-7 lg:p-8 border border-white/20">
+                    <h4 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6">Contact Success Metrics</h4>
+                    <div className="space-y-3 sm:space-y-4">
+                      <div className="flex items-center justify-between py-2 sm:py-3 border-b border-white/10">
+                        <span className="text-blue-100 text-sm sm:text-base">Customer Satisfaction</span>
+                        <span className="font-bold text-green-300 text-base sm:text-lg">98%</span>
                       </div>
-                      <div className="flex items-center justify-between py-3 border-b border-white/10">
-                        <span className="text-blue-100">Average Response Time</span>
-                        <span className="font-bold">1.8 hours</span>
+                      <div className="flex items-center justify-between py-2 sm:py-3 border-b border-white/10">
+                        <span className="text-blue-100 text-sm sm:text-base">Average Response Time</span>
+                        <span className="font-bold text-base sm:text-lg">1.8 hours</span>
                       </div>
-                      <div className="flex items-center justify-between py-3 border-b border-white/10">
-                        <span className="text-blue-100">Issue Resolution Rate</span>
-                        <span className="font-bold">96%</span>
+                      <div className="flex items-center justify-between py-2 sm:py-3 border-b border-white/10">
+                        <span className="text-blue-100 text-sm sm:text-base">Issue Resolution Rate</span>
+                        <span className="font-bold text-base sm:text-lg">96%</span>
                       </div>
-                      <div className="flex items-center justify-between py-3">
-                        <span className="text-blue-100">Support Languages</span>
-                        <span className="font-bold">12+</span>
+                      <div className="flex items-center justify-between py-2 sm:py-3 border-b border-white/10">
+                        <span className="text-blue-100 text-sm sm:text-base">Client Retention Rate</span>
+                        <span className="font-bold text-green-300 text-base sm:text-lg">94%</span>
+                      </div>
+                      <div className="flex items-center justify-between py-2 sm:py-3">
+                        <span className="text-blue-100 text-sm sm:text-base">Support Availability</span>
+                        <span className="font-bold text-base sm:text-lg">24/7/365</span>
                       </div>
                     </div>
                   </div>
@@ -512,32 +413,32 @@ export default function Contact() {
           </div>
         </section>
 
-        {/* Enhanced Contact Form */}
-        <section id="contact-form" className="py-24 bg-gradient-to-b from-white to-gray-50">
-          <div className="container mx-auto px-4">
+        {/* Enhanced Contact Form Section */}
+        <section id="contact-form" className="py-12 md:py-16 lg:py-20 bg-gradient-to-b from-gray-50 to-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-16">
-                <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-800 rounded-3xl mb-8 shadow-2xl">
-                  <MessageSquare className="w-10 h-10 text-white" />
+              <div className="text-center mb-10 sm:mb-12 md:mb-16">
+                <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl sm:rounded-3xl mb-6 sm:mb-8 shadow-xl">
+                  <MessageSquare className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
                 </div>
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
                   Send Us a <span className="text-blue-600">Message</span>
                 </h2>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
                   Fill out the form below and our team will get back to you with personalized solutions
                 </p>
               </div>
 
               {/* Success Message */}
               {success && (
-                <div className="mb-8 p-6 bg-green-500/10 border border-green-500/30 rounded-2xl">
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center mr-4">
-                      <CheckCircle className="w-6 h-6 text-green-500" />
+                <div className="mb-6 sm:mb-8 p-4 sm:p-5 md:p-6 bg-green-500/10 border border-green-500/30 rounded-xl sm:rounded-2xl">
+                  <div className="flex items-start sm:items-center">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-500/20 rounded-lg sm:rounded-xl flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0">
+                      <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-green-500" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-green-700 mb-1">Message Sent Successfully!</h3>
-                      <p className="text-green-600">
+                      <h3 className="text-base sm:text-lg font-bold text-green-700 mb-1">Message Sent Successfully!</h3>
+                      <p className="text-green-600 text-sm sm:text-base">
                         Thank you for contacting us. Our team will get back to you within 24 hours.
                       </p>
                     </div>
@@ -547,38 +448,38 @@ export default function Contact() {
 
               {/* Error Message */}
               {error && (
-                <div className="mb-8 p-6 bg-red-500/10 border border-red-500/30 rounded-2xl">
+                <div className="mb-6 sm:mb-8 p-4 sm:p-5 md:p-6 bg-red-500/10 border border-red-500/30 rounded-xl sm:rounded-2xl">
                   <div className="flex items-start">
-                    <div className="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
-                      <svg className="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-red-500/20 rounded-lg sm:rounded-xl flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0">
+                      <svg className="w-5 h-5 sm:w-6 sm:h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-red-700 mb-1">Error</h3>
-                      <p className="text-red-600">{error}</p>
+                      <h3 className="text-base sm:text-lg font-bold text-red-700 mb-1">Error</h3>
+                      <p className="text-red-600 text-sm sm:text-base">{error}</p>
                     </div>
                   </div>
                 </div>
               )}
 
-              <div className="bg-white rounded-3xl shadow-2xl p-6 md:p-12 border border-gray-100">
-                <form onSubmit={handleSubmit} className="space-y-8">
+              <div className="bg-white rounded-2xl sm:rounded-3xl shadow-lg sm:shadow-2xl p-5 sm:p-6 md:p-8 lg:p-10 border border-gray-100">
+                <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
                   {/* Personal Information */}
-                  <div className="space-y-8">
-                    <div className="flex items-center space-x-4 mb-6">
-                      <div className="w-12 h-12 bg-gradient-to-br from-blue-600/10 to-blue-800/10 rounded-xl flex items-center justify-center">
-                        <Users className="w-6 h-6 text-blue-600" />
+                  <div className="space-y-6 sm:space-y-8">
+                    <div className="flex items-center space-x-3 sm:space-x-4 mb-4 sm:mb-6">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-600/10 to-blue-800/10 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
+                        <Users className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
                       </div>
                       <div>
-                        <h3 className="text-2xl font-bold text-gray-900">Personal Information</h3>
-                        <p className="text-gray-500">Tell us who you are</p>
+                        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">Personal Information</h3>
+                        <p className="text-gray-500 text-sm sm:text-base">Tell us who you are</p>
                       </div>
                     </div>
                     
-                    <div className="grid md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
                       <div>
-                        <label className="block text-gray-700 font-medium mb-3">
+                        <label className="block text-gray-700 font-medium mb-2 sm:mb-3 text-sm sm:text-base">
                           Full Name <span className="text-red-500">*</span>
                         </label>
                         <input
@@ -588,12 +489,12 @@ export default function Contact() {
                           onChange={handleChange}
                           required
                           disabled={loading}
-                          className="w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-gray-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                          className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-gray-50 border border-gray-200 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-gray-500 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
                           placeholder="John Smith"
                         />
                       </div>
                       <div>
-                        <label className="block text-gray-700 font-medium mb-3">
+                        <label className="block text-gray-700 font-medium mb-2 sm:mb-3 text-sm sm:text-base">
                           Email Address <span className="text-red-500">*</span>
                         </label>
                         <input
@@ -603,15 +504,15 @@ export default function Contact() {
                           onChange={handleChange}
                           required
                           disabled={loading}
-                          className="w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-gray-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                          className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-gray-50 border border-gray-200 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-gray-500 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
                           placeholder="john@company.com"
                         />
                       </div>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
                       <div>
-                        <label className="block text-gray-700 font-medium mb-3">
+                        <label className="block text-gray-700 font-medium mb-2 sm:mb-3 text-sm sm:text-base">
                           Phone Number <span className="text-red-500">*</span>
                         </label>
                         <input
@@ -621,12 +522,12 @@ export default function Contact() {
                           onChange={handleChange}
                           required
                           disabled={loading}
-                          className="w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-gray-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                          className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-gray-50 border border-gray-200 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-gray-500 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
                           placeholder="(555) 123-4567"
                         />
                       </div>
                       <div>
-                        <label className="block text-gray-700 font-medium mb-3">
+                        <label className="block text-gray-700 font-medium mb-2 sm:mb-3 text-sm sm:text-base">
                           Company Name
                         </label>
                         <input
@@ -635,7 +536,7 @@ export default function Contact() {
                           value={formData.company}
                           onChange={handleChange}
                           disabled={loading}
-                          className="w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-gray-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                          className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-gray-50 border border-gray-200 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-gray-500 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
                           placeholder="Your Company LLC"
                         />
                       </div>
@@ -643,20 +544,20 @@ export default function Contact() {
                   </div>
 
                   {/* Inquiry Details */}
-                  <div className="space-y-8">
-                    <div className="flex items-center space-x-4 mb-6">
-                      <div className="w-12 h-12 bg-gradient-to-br from-blue-600/10 to-blue-800/10 rounded-xl flex items-center justify-center">
-                        <FileText className="w-6 h-6 text-blue-600" />
+                  <div className="space-y-6 sm:space-y-8">
+                    <div className="flex items-center space-x-3 sm:space-x-4 mb-4 sm:mb-6">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-600/10 to-blue-800/10 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
+                        <FileText className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
                       </div>
                       <div>
-                        <h3 className="text-2xl font-bold text-gray-900">Inquiry Details</h3>
-                        <p className="text-gray-500">Tell us about your request</p>
+                        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">Inquiry Details</h3>
+                        <p className="text-gray-500 text-sm sm:text-base">Tell us about your request</p>
                       </div>
                     </div>
                     
-                    <div className="grid md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
                       <div>
-                        <label className="block text-gray-700 font-medium mb-3">
+                        <label className="block text-gray-700 font-medium mb-2 sm:mb-3 text-sm sm:text-base">
                           Subject <span className="text-red-500">*</span>
                         </label>
                         <input
@@ -666,12 +567,12 @@ export default function Contact() {
                           onChange={handleChange}
                           required
                           disabled={loading}
-                          className="w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-gray-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                          className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-gray-50 border border-gray-200 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-gray-500 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
                           placeholder="What is this regarding?"
                         />
                       </div>
                       <div>
-                        <label className="block text-gray-700 font-medium mb-3">
+                        <label className="block text-gray-700 font-medium mb-2 sm:mb-3 text-sm sm:text-base">
                           Department <span className="text-red-500">*</span>
                         </label>
                         <select
@@ -680,7 +581,7 @@ export default function Contact() {
                           onChange={handleChange}
                           required
                           disabled={loading}
-                          className="w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 disabled:opacity-50 disabled:cursor-not-allowed"
+                          className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-gray-50 border border-gray-200 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base appearance-none"
                         >
                           <option value="">Select department</option>
                           <option value="sales">Sales & Business Development</option>
@@ -694,14 +595,14 @@ export default function Contact() {
                     </div>
 
                     <div>
-                      <label className="block text-gray-700 font-medium mb-3">
+                      <label className="block text-gray-700 font-medium mb-2 sm:mb-3 text-sm sm:text-base">
                         Urgency Level <span className="text-red-500">*</span>
                       </label>
-                      <div className="grid grid-cols-3 gap-3">
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3">
                         {['low', 'normal', 'urgent'].map((level) => (
                           <label
                             key={level}
-                            className={`flex items-center justify-center p-4 rounded-xl border-2 cursor-pointer transition-all ${
+                            className={`flex items-center justify-center p-3 sm:p-4 rounded-lg sm:rounded-xl border-2 cursor-pointer transition-all ${
                               formData.urgency === level
                                 ? 'border-blue-500 bg-blue-50'
                                 : 'border-gray-200 hover:border-gray-300'
@@ -717,12 +618,12 @@ export default function Contact() {
                               className="hidden"
                             />
                             <div className="flex flex-col items-center">
-                              <div className={`w-3 h-3 rounded-full mb-2 ${
+                              <div className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full mb-1.5 sm:mb-2 ${
                                 level === 'low' ? 'bg-green-500' :
                                 level === 'normal' ? 'bg-yellow-500' :
                                 'bg-red-500'
                               }`}></div>
-                              <span className="font-medium capitalize">{level}</span>
+                              <span className="font-medium capitalize text-xs sm:text-sm">{level}</span>
                             </div>
                           </label>
                         ))}
@@ -730,7 +631,7 @@ export default function Contact() {
                     </div>
 
                     <div>
-                      <label className="block text-gray-700 font-medium mb-3">
+                      <label className="block text-gray-700 font-medium mb-2 sm:mb-3 text-sm sm:text-base">
                         Your Message <span className="text-red-500">*</span>
                       </label>
                       <textarea
@@ -738,18 +639,18 @@ export default function Contact() {
                         value={formData.message}
                         onChange={handleChange}
                         required
-                        rows={6}
+                        rows={4}
                         disabled={loading}
-                        className="w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-gray-500 disabled:opacity-50 disabled:cursor-not-allowed resize-none"
+                        className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-gray-50 border border-gray-200 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-gray-500 disabled:opacity-50 disabled:cursor-not-allowed resize-none text-sm sm:text-base"
                         placeholder="Please provide details about your inquiry, including any specific requirements or deadlines..."
                       />
                     </div>
                   </div>
 
                   {/* Form Submission */}
-                  <div className="pt-8 border-t border-gray-200">
-                    <div className="flex flex-col lg:flex-row items-center justify-between space-y-6 lg:space-y-0">
-                      <div className="text-sm text-gray-500">
+                  <div className="pt-6 sm:pt-8 border-t border-gray-200">
+                    <div className="flex flex-col lg:flex-row items-center justify-between space-y-4 sm:space-y-6 lg:space-y-0">
+                      <div className="text-xs sm:text-sm text-gray-500 text-center lg:text-left">
                         By submitting this form, you agree to our{' '}
                         <a href="/privacy" className="text-blue-600 hover:underline">Privacy Policy</a> and{' '}
                         <a href="/terms" className="text-blue-600 hover:underline">Terms of Service</a>.
@@ -757,21 +658,21 @@ export default function Contact() {
                       <button
                         type="submit"
                         disabled={loading}
-                        className={`font-bold py-4 px-12 rounded-xl transition-all duration-300 flex items-center space-x-3 ${
+                        className={`font-bold py-3 px-8 sm:py-4 sm:px-12 rounded-lg sm:rounded-xl transition-all duration-300 flex items-center space-x-2 sm:space-x-3 w-full sm:w-auto justify-center ${
                           loading
                             ? 'bg-blue-400 cursor-not-allowed'
                             : 'bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 hover:scale-105 shadow-lg hover:shadow-blue-500/30'
-                        } text-white`}
+                        } text-white text-sm sm:text-base`}
                       >
                         {loading ? (
                           <>
-                            <Loader2 className="w-5 h-5 animate-spin" />
+                            <Loader2 className="w-4 h-4 sm:w-5 sm:h-5 animate-spin" />
                             <span>Sending...</span>
                           </>
                         ) : (
                           <>
                             <span>Send Message</span>
-                            <ArrowRight className="w-5 h-5" />
+                            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
                           </>
                         )}
                       </button>
@@ -779,62 +680,24 @@ export default function Contact() {
                   </div>
                 </form>
               </div>
-
-              {/* Contact Assurance */}
-              <div className="mt-16 bg-gradient-to-r from-green-600/10 to-green-800/10 rounded-3xl p-8 md:p-12 border border-green-500/20">
-                <div className="grid lg:grid-cols-2 gap-8 items-center">
-                  <div>
-                    <h3 className="text-3xl font-bold text-gray-900 mb-6">
-                      Our Contact <span className="text-green-600">Promise</span>
-                    </h3>
-                    <p className="text-gray-600 mb-8">
-                      When you reach out to PrimeFreightExpress, you can expect exceptional service at every touchpoint. We're committed to providing timely, relevant, and helpful responses to all inquiries.
-                    </p>
-                    <div className="space-y-4">
-                      <div className="flex items-center text-gray-700">
-                        <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                        <span>Guaranteed response within 24 hours</span>
-                      </div>
-                      <div className="flex items-center text-gray-700">
-                        <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                        <span>Direct access to subject matter experts</span>
-                      </div>
-                      <div className="flex items-center text-gray-700">
-                        <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                        <span>Personalized solutions, not template responses</span>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="text-center">
-                    <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-green-600 to-green-800 rounded-full mb-6">
-                      <ThumbsUp className="w-12 h-12 text-white" />
-                    </div>
-                    <h4 className="text-2xl font-bold text-gray-900 mb-3">98% Satisfaction Rate</h4>
-                    <p className="text-gray-600">
-                      Based on customer feedback from the past 12 months
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </section>
 
         {/* FAQ Section */}
-        <section className="py-24 bg-gray-900 text-white">
-          <div className="container mx-auto px-4">
+        <section className="py-12 md:py-16 lg:py-20 bg-gray-900 text-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <div className="text-center mb-10 sm:mb-12 md:mb-16">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
                   Frequently Asked <span className="text-blue-400">Questions</span>
                 </h2>
-                <p className="text-xl text-gray-300">
+                <p className="text-base sm:text-lg md:text-xl text-gray-300">
                   Quick answers to common questions about contacting us
                 </p>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 {faqItems.map((item, index) => (
                   <AccordionItem 
                     key={index}
